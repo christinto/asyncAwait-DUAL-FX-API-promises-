@@ -2,7 +2,7 @@
 //install and require axios
 // this is in es7 async await
 //function that takes 3 args... USD, CAD, AND AMOUNT WE WANNA CONVERT BY... cvrt $23..
-
+// http://fixer.io/   and... https://restcountries.eu/#api-endpoints-currency
 const axios = require('axios');
 //cld work in es5 with function..... THIS IS FIRST ENDPOINT FUNCTION
 //key value pair where key is currency.. USD is currency we are converting from.. eventually 23 X this number
@@ -54,6 +54,8 @@ const convertCurrencyAlt = async (from, to, amount) => {
   return `${amount} ${from} is worth ${exchangedAmount} ${to}. ${to} can be used in the following countries: ${countries.join(', ')}`;
 };
 
+
+//100 is amount to convert
 convertCurrencyAlt('USD', 'EUR', 100).then((status) => {
   console.log(status);
 }).catch((e) => {
